@@ -32,6 +32,7 @@ public class LL {
             tail = head;
         }
         size += 1;
+
     }
 
     // TO INSERT AT LAST POSITION
@@ -52,7 +53,7 @@ public class LL {
             InsertFirst(val);
             return;
         }
-        if(index == size - 1){
+        if(index == size){
             InsertLast(val);
             return;
         }
@@ -78,6 +79,62 @@ public class LL {
         return val;
     }
 
+    //Delete Last
+    public Node get(int index){
+        Node node = head;
+        for(int i = 0; i<index ; i++){
+            node = node.next;
+        }
+        return node;
+
+    }
+
+    public int deleteLast(){
+        if(size <=1){
+            deleteFirst();
+
+        }
+        Node SecondLast = get(size - 2);
+        int value = SecondLast.next.value;
+        tail = SecondLast;
+        SecondLast.next = null;
+        size --;
+        return value;
+    }
+
+    //deletion at particular index
+    public int delete(int index){
+        if(index == 0 ){
+            deleteFirst();
+        }
+        if(index == size- 1){
+            deleteLast();
+        }
+        Node prev = get(index - 1);
+        int value = prev.next.value;
+        prev.next = prev.next.next;
+        size --;
+
+
+        return value;
+    }
+
+    public int find(int value){
+        Node node = head;
+        int index = 0;
+        while(node != null){
+            if(node.value == value){
+
+                return index;
+
+
+            }
+            index++;
+            node = node.next;
+        }
+        return -1;
+    }
+
     public void display(){
         Node temp = head;
         while(temp!= null){
@@ -86,6 +143,8 @@ public class LL {
         }
         System.out.println("END");
     }
+
+
 
 
 }
