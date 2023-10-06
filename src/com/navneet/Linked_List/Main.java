@@ -14,12 +14,14 @@ public class Main {
         list.insert(88,4);
         list.insert(11,6);
         list.display();
-        System.out.println(list.delete(3));
-        System.out.println();
+//        System.out.println(list.delete(3));
+//        System.out.println();
+//        list.display();
+//        int value = 88;
+//        System.out.println(value);
+//        System.out.println("found at index value = " + list.find(value));
+        list.insertRec(12,2);
         list.display();
-        int value = 88;
-        System.out.println(value);
-        System.out.println("found at index value = " + list.find(value));
 
     }
 }
